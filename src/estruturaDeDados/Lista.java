@@ -1,50 +1,84 @@
 package estruturaDeDados;
 
+ class No{
+    int info;
+    No proximo;
+
+    public No(int info) {
+        this.info = info;
+        this.proximo = null;
+} }
+
 public class Lista {
+    private No inicio;
 
     public Lista() {
-        // TODO Auto-generated constructor stub
-        throw new UnsupportedOperationException("Unimplemented constructor 'ListaCircular'");
+        this.inicio = null;
+
     }
 
     public void insereInicio(int i) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'insereInicio'");
+        No novoNo = new No(i);
+        novoNo.proximo = inicio;
+        inicio = novoNo;
     }
 
     public boolean buscaElemento(int i) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'buscaElemento'");
+        No atual = inicio;
+        while (atual != null){
+            if(atual.info == i){
+                return true;
+            }
+            atual = atual.proximo;
+
+        }
+        return false;
+
     }
 
     public Object buscaIndice(int i) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'buscaIndice'");
+        No atual = inicio;
+        int indice = 0;
+
+        while (atual != null){
+            if (indice == i){
+                return atual.info;
+            }
+            atual = atual.proximo;
+            indice++;
+        }
+        return null;
     }
 
     public void insereFim(int i) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'insereFim'");
+        No novNo = new No(i);
+        if (inicio == null){
+            inicio = novNo;
+
+        }
+        else{
+            No atual = inicio;
+            while(atual.proximo != null){
+                atual = atual.proximo;
+            }
+            atual.proximo = novNo;
+        }
     }
 
     public void removeInicio() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeInicio'");
+
     }
 
     public void removeFim() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeFim'");
+
     }
 
     public void removeIndice(int i) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeIndice'");
+
     }
 
     public void insereElementoPosicao(int i, int j) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'insereElementoPosicao'");
+
     }
     
 }
